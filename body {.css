@@ -3,6 +3,7 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f0f8ff;
     text-align: center;
+    animation: fadeIn 2s ease-in;
 }
 
 header {
@@ -10,10 +11,12 @@ header {
     color: white;
     padding: 20px 0;
     font-size: 24px;
+    animation: fadeIn 2s ease-in;
 }
 
 main {
     padding: 40px 20px;
+    animation: fadeIn 2s ease-in;
 }
 
 footer {
@@ -24,6 +27,7 @@ footer {
     width: 100%;
     bottom: 0;
     font-size: 14px;
+    animation: fadeIn 2s ease-in;
 }
 
 /* Слайдер */
@@ -33,24 +37,18 @@ footer {
     margin: 40px auto;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    animation: fadeIn 2s ease-in;
 }
 
 .slides {
     display: flex;
-    width: 900px; /* 3 картинки по 300px */
+    width: 900px;
     animation: slide 9s infinite;
 }
 
 .slides img {
     width: 300px;
     height: auto;
-}
-
-@keyframes slide {
-    0% { transform: translateX(0); }
-    33% { transform: translateX(-300px); }
-    66% { transform: translateX(-600px); }
-    100% { transform: translateX(0); }
 }
 
 /* Галерея */
@@ -60,6 +58,7 @@ footer {
     flex-wrap: wrap;
     gap: 20px;
     margin-top: 30px;
+    animation: fadeIn 2s ease-in;
 }
 
 .gallery a {
@@ -76,4 +75,18 @@ footer {
 
 .gallery img:hover {
     transform: scale(1.05);
+}
+
+/* Анимация появления */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Анимация для слайдера */
+@keyframes slide {
+    0% { transform: translateX(0); }
+    33% { transform: translateX(-300px); }
+    66% { transform: translateX(-600px); }
+    100% { transform: translateX(0); }
 }
