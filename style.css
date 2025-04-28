@@ -45,7 +45,7 @@ h1, h2 {
 }
 
 .slides img {
-    width: 33.33%; /* Показываем 3 изображения */
+    width: 33.33%; 
     height: auto;
     display: block;
 }
