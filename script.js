@@ -4,10 +4,10 @@ function showSlides() {
     let slides = document.querySelectorAll('.slides img');
     
 
-    if (slideIndex >= slides.length) {
+    if (slideIndex >= slides.length - 2) {
         slideIndex = 0; 
     } else if (slideIndex < 0) {
-        slideIndex = slides.length - 1; 
+        slideIndex = slides.length - 3; 
     }
 
   
