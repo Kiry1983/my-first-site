@@ -50,7 +50,6 @@ h1, h2 {
     display: block;
 }
 
-/* Стили для кнопок (если хотите добавить навигацию) */
 .prev, .next {
     position: absolute;
     top: 50%;
