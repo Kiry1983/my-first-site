@@ -1,51 +1,23 @@
-const slidesContainer = document.querySelector('.slides');
-const slides = document.querySelectorAll('.slides img');
-const nextBtn = document.querySelector('.next');
-const prevBtn = document.querySelector('.prev');
+const slider = document.getElementById('slider');
+const slideTrack = document.getElementById('slideTrack');
+let position = 0;
+let speed = 1; 
 
-let index = 0;
-const slideCount = slides.length;
-
-
-const firstClone = slides[0].cloneNode(true);
-slidesContainer.appendChild(firstClone);
-
-function moveToSlide() {
-    slidesContainer.style.transition = "transform 0.5s ease";
-    slidesContainer.style.transform = `translateX(-${index * 100}%)`;
+function moveSlider() {
+    position -= speed;
+    if (Math.abs(position) >= slideTrack.scrollWidth / 2) {
+        position = 0; 
+    }
+    slideTrack.style.transform = `translateX(${position}px)`;
+    requestAnimationFrame(moveSlider);
 }
 
+moveSlider();
 
-slidesContainer.addEventListener('transitionend', () => {
-    if (index === slideCount) {
-        slidesContainer.style.transition = "none"; 
-        index = 0;
-        slidesContainer.style.transform = `translateX(0)`;
-    }
+
+slider.addEventListener('mouseenter', () => {
+    speed = 0;
 });
-
-function nextSlide() {
-    index++;
-    moveToSlide();
-}
-
-function prevSlide() {
-    if (index === 0) {
-        index = slideCount;
-        slidesContainer.style.transition = "none";
-        slidesContainer.style.transform = `translateX(-${index * 100}%)`;
-        setTimeout(() => {
-            slidesContainer.style.transition = "transform 0.5s ease";
-            index--;
-            moveToSlide();
-        }, 20);
-    } else {
-        index--;
-        moveToSlide();
-    }
-}
-
-nextBtn.addEventListener('click', nextSlide);
-prevBtn.addEventListener('click', prevSlide);
-
-setInterval(nextSlide, 3000);
+slider.addEventListener('mouseleave', () => {
+    speed = 1;
+});
