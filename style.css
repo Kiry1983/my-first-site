@@ -34,44 +34,24 @@ h1, h2 {
 }
 
 .slider {
-    width: 100%;
     overflow: hidden;
-    position: relative;
+    width: 300px;
+    margin: 40px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    animation: fadeIn 2s ease-in;
 }
 
 .slides {
     display: flex;
-    transition: transform 1s ease;
+    width: 900px;
+    animation: slide 9s infinite;
 }
 
 .slides img {
-    width: 33.33%;
-    max-width: 100%;
+    width: 300px;
     height: auto;
-    display: block;
 }
-
-.prev, .next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    padding: 10px;
-    font-size: 24px;
-    border: none;
-    cursor: pointer;
-    z-index: 10;
-}
-
-.prev {
-    left: 10px;
-}
-
-.next {
-    right: 10px;
-}
-
 .gallery {
     display: flex;
     flex-wrap: wrap;
