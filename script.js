@@ -3,7 +3,7 @@ let slideIndex = 0;
 function showSlides() {
     let slides = document.querySelectorAll('.slides img');
     if (slideIndex >= slides.length) {
-        slideIndex = 1;
+        slideIndex = 0;
     } else if (slideIndex < 0) {
         slideIndex = slides.length - 3;
     }
