@@ -33,7 +33,7 @@ h1, h2 {
     font-family: 'Georgia', serif;
 }
 
-.slider {
+..slider {
     width: 100%;
     overflow: hidden;
     position: relative;
@@ -45,10 +45,32 @@ h1, h2 {
 }
 
 .slides img {
-    width: 33.33%;  
-    height: auto;  
+    width: 33.33%; /* Показываем 3 изображения */
+    height: auto;
     display: block;
 }
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    font-size: 24px;
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
 .gallery {
     display: flex;
     flex-wrap: wrap;
