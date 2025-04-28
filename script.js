@@ -1,26 +1,51 @@
-let slideIndex = 0;
+const slidesContainer = document.querySelector('.slides');
+const slides = document.querySelectorAll('.slides img');
+const nextBtn = document.querySelector('.next');
+const prevBtn = document.querySelector('.prev');
 
-function showSlides() {
-    let slides = document.querySelectorAll('.slides img');
-    let totalSlides = slides.length;
-    }
-    document.querySelector('.slides').style.transform = `translateX(-${slideIndex * 100}%)`;
+let index = 0;
+const slideCount = slides.length;
+
+
+const firstClone = slides[0].cloneNode(true);
+slidesContainer.appendChild(firstClone);
+
+function moveToSlide() {
+    slidesContainer.style.transition = "transform 0.5s ease";
+    slidesContainer.style.transform = `translateX(-${index * 100}%)`;
 }
 
+
+slidesContainer.addEventListener('transitionend', () => {
+    if (index === slideCount) {
+        slidesContainer.style.transition = "none"; 
+        index = 0;
+        slidesContainer.style.transform = `translateX(0)`;
+    }
+});
+
 function nextSlide() {
-    let slides = document.querySelectorAll('.slides img');
-    slideIndex = (slideIndex + 1) % slides.length; 
-    showSlides();
+    index++;
+    moveToSlide();
 }
 
 function prevSlide() {
-    let slides = document.querySelectorAll('.slides img');
-    slideIndex = (slideIndex - 1 + slides.length) % slides.length; 
-    showSlides();
+    if (index === 0) {
+        index = slideCount;
+        slidesContainer.style.transition = "none";
+        slidesContainer.style.transform = `translateX(-${index * 100}%)`;
+        setTimeout(() => {
+            slidesContainer.style.transition = "transform 0.5s ease";
+            index--;
+            moveToSlide();
+        }, 20);
+    } else {
+        index--;
+        moveToSlide();
+    }
 }
 
-document.querySelector('.next').addEventListener('click', nextSlide);
-document.querySelector('.prev').addEventListener('click', prevSlide);
+nextBtn.addEventListener('click', nextSlide);
+prevBtn.addEventListener('click', prevSlide);
 
-setInterval(nextSlide, 3000);  
-showSlides(); 
+setInterval(nextSlide, 3000);
