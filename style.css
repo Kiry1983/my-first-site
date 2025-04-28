@@ -49,8 +49,10 @@ h1, h2 {
 }
 
 .slides img {
-    width: 300px;
+    width: 100%;
+    max-width: 100%;
     height: auto;
+    display: block;
 }
 .gallery {
     display: flex;
