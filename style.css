@@ -41,14 +41,12 @@ h1, h2 {
 
 .slides {
     display: flex;
-    width: 900px;
-    animation: slide 9s infinite;
+    transition: transform 1s ease;
 }
 
 .slides img {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
+    width: 33.33%;  
+    height: auto;  
     display: block;
 }
 .gallery {
