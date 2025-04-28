@@ -33,29 +33,37 @@ h1, h2 {
     font-family: 'Georgia', serif;
 }
 
+
 .slider {
     overflow: hidden;
-    background: white;
+    width: 100%;
+    background: #fff;
     padding: 20px 0;
 }
 
-.slide-track {
+.slides {
     display: flex;
-    width: calc(250px * 6); 
+    width: max-content;
     animation: scroll 15s linear infinite;
 }
 
-.slide-track img {
-    width: 250px;
+.slides img {
+    width: 300px;
     height: auto;
-    margin: 0 10px;
+    margin-right: 20px;
     border-radius: 10px;
 }
 
+
 @keyframes scroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
 }
+
 .gallery {
     display: flex;
     flex-wrap: wrap;
@@ -63,15 +71,16 @@ h1, h2 {
 }
 
 .gallery a {
-    width: 50%;
+    width: 45%;
     margin: 10px 0;
     display: block;
 }
 
 .gallery img {
-    width: 50%;
+    width: 100%;
     border-radius: 10px;
 }
+
 
 form {
     width: 50%;
@@ -102,11 +111,13 @@ input[type="submit"]:hover {
     background-color: #555;
 }
 
+
 iframe {
     width: 100%;
     height: 500px;
     border: none;
 }
+
 
 footer {
     background-color: #333;
@@ -117,13 +128,13 @@ footer {
 
 
 @media (max-width: 768px) {
-    .slider .slides img {
-        width: 100%; 
+    .slides img {
+        width: 250px; 
     }
     .gallery a {
-        width: 100%; 
+        width: 100%;
     }
     form {
-        width: 90%; 
+        width: 90%;
     }
 }
