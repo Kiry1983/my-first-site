@@ -5,7 +5,7 @@ function showSlides() {
     if (slideIndex >= slides.length) {
         slideIndex = 0;
     } else if (slideIndex < 0) {
-        slideIndex = slides.length - 1;
+        slideIndex = slides.length - 3;
     }
     document.querySelector('.slides').style.transform = `translateX(-${slideIndex * 100}%)`;
 }
