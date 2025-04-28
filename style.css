@@ -32,13 +32,46 @@ nav ul li a {
 
 h1, h2 {
     font-family: 'Georgia', serif;
-}
 
 .slider {
     width: 100%;
     overflow: hidden;
-    text-align: center;
+    position: relative;
 }
+
+.slides {
+    display: flex;
+    transition: transform 1s ease;
+}
+
+.slides img {
+    width: 100%;
+    max-width: 100%;
+    display: block;
+}
+
+/* Стили для кнопок (если хотите добавить навигацию) */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    font-size: 24px;
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
 
 .slides img {
     width: 100%;
